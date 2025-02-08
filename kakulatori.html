@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kakulator</title>
+        <link rel="stylesheet" href="kakulatori.css">
+    </head>
+    <body>
+        <div id="Cal">
+            <input id="display" readonly>
+            <div id="butts">
+                <button onclick="displayValue('*')" class="add">x</button>
+                <button onclick="displayValue('7')">7</button>
+                <button onclick="displayValue('8')">8</button>
+                <button onclick="displayValue('9')">9</button>
+                <button onclick="displayValue('+')" class="add">+</button>
+                <button onclick="displayValue('6')">6</button>
+                <button onclick="displayValue('5')">5</button>
+                <button onclick="displayValue('4')">4</button>
+                <button onclick="displayValue('-')" class="add">-</button>
+                <button onclick="displayValue('3')">3</button>
+                <button onclick="displayValue('2')">2</button>
+                <button onclick="displayValue('1')">1</button>
+                <button onclick="displayValue('/')" class="add">/</button>
+                <button onclick="displayValue('0')">0</button>
+                <button onclick="displayValue('.')">.</button>
+                <button onclick="Caculate()">=</button>
+                <button onclick="Clear()" class="add">C</button>
+            </div>
+        </div>
+        <script>
+            const display=document.getElementById('display');
+
+            function displayValue(input){
+                display.value+=input;
+            }
+
+            function Clear(){
+                display.value="";
+            }
+
+            function Caculate(){
+                try{
+                    display.value=eval(display.value);
+                }
+                catch(error){
+                    display.value="Error";
+                }
+            }
+        </script>
+    </body>
+</html>
